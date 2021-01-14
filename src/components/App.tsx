@@ -5,7 +5,7 @@ interface AppProps {
 }
 
 // const App = (props: AppProps) => {
-  const App: React.FC<AppProps> = (props) => {
+  const App: React.FC<AppProps> = (props: AppProps): JSX.Element => { // JSX.Element is a return type annotation
   return (
     <div>
       {props.color}
