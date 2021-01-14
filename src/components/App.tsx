@@ -1,9 +1,14 @@
 import React from 'react'
 
-const App = () => {
+interface AppProps {
+  color: string;
+}
+
+// const App = (props: AppProps) => {
+  const App: React.FC<AppProps> = (props) => {
   return (
     <div>
-      hi there from app
+      {props.color}
     </div>
   )
 }
