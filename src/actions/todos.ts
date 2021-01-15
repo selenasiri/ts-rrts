@@ -13,15 +13,28 @@ export interface FetchTodosAction {
   payload: Todo[];
 }
 
-const url = 'https://jsonplaceholder.typicode.com/todos';
+export interface DeleteTodoAction {
+  type: ActionTypes.deleteTodo;
+  payload: number;
+}
+
+const url = 'https://jsonplaceholder.typicode.com/todos'
 
 export const fetchTodos = () => {
   return async (dispatch: Dispatch) => {
     const response = await axios.get<Todo[]>(url);
 
+    // Provide the generic type for the dispatch - FetchTodosAction
     dispatch<FetchTodosAction>({
-      type:ActionTypes.fetchTodos,
+      type: ActionTypes.fetchTodos,
       payload: response.data
     });
   };
 };
+
+export const deleteTodo = (id: number): DeleteTodoAction => {
+  return {
+    type: ActionTypes.deleteTodo,
+    payload: id
+  }
+}
