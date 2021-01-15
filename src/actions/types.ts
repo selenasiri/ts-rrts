@@ -1,5 +1,5 @@
-import { fetchTodos } from './index';
+import { FetchTodosAction } from './todos';
 
 export enum ActionTypes {
-  fetchTodos 
+  fetchTodos = 'fetchTodos'
 }
