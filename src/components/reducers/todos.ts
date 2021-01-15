@@ -13,5 +13,4 @@ export const todosReducer = (
     default: 
       return state;
   }
-  // return 5; // error message - because we have <StoreState> in reducers > index.ts 
 };
